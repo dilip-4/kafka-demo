@@ -17,7 +17,7 @@ public class ConsumerListener {
             System.out.printf("Consumed: key=%s value=%s partition=%d offset=%d%n",
                     record.key(), record.value(), record.partition(), record.offset());
 
-            // business logic here...
+            // business logic TODO:
         } catch (Exception ex) {
             // don't ack -> message will be redelivered (or handled by error handler)
             //logger.error("Processing failed for offset {}: {}", record.offset(), ex.getMessage(), ex);

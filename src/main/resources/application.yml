@@ -1,0 +1,33 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: demo-group
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
+    streams:
+      application-id: kafka-demo-streams
+      bootstrap-servers: localhost:29092
+      default:
+        key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        value-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+
+kafka:
+  topics:
+    input: demo-input
+    output: demo-output
+
+logging:
+  level:
+    root: INFO
+    org.springframework.kafka: INFO
+
+server:
+  port: 8899

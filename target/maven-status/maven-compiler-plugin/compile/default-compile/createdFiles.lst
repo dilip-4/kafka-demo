@@ -1,0 +1,4 @@
+com\example\kafkademo\streams\StreamsProcessor.class
+com\example\kafkademo\KafkaDemoApplication.class
+com\example\kafkademo\consumer\ConsumerListener.class
+com\example\kafkademo\producer\ProducerController.class
